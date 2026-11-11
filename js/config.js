@@ -2,7 +2,7 @@
 window.SITE = {
   brand: "3h1t3",
   twitterHandle: "3h1t3", // X/Twitter handle, without @
-  discord: "https://discord.gg/HMhTWhNFR", // Public community invite URL.
+  discord: "https://discord.gg/JZSZnTmNQ", // Public community invite URL.
   currency: "USD",
   email: "", // Leave EMPTY if it is your personal email: it would be public and the form would show it as a button.
   formEndpoint: "https://api.web3forms.com/submit", // URL of your form service. Web3Forms: https://api.web3forms.com/submit . Formspree: the form URL they give you.
