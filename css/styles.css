@@ -1,0 +1,255 @@
+/* Character-inspired palettes: warm coral/rose for character A, cool lavender for character B. */
+:root{--bg:#FBF8FF;--ink:#33224F;--accent:#7653BE;--soft:#E9DFFA;--line:#CDB9F2;--hl:#D987A6;--r:22px;--shadow:0 8px 22px #34204a12}
+.warm{--bg:#FFF3EE;--ink:#4A2430;--accent:#BD4356;--soft:#FFE0D5;--line:#EFB9AA;--hl:#D9828E}
+.lilac{--bg:#F2ECFB;--ink:#33224F;--accent:#7451B8;--soft:#E3D7F7;--line:#C5B1EE;--hl:#D987A6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:400 1.05rem/1.65 Nunito,system-ui,sans-serif;color:#33224F;background:#FBF8FF}
+h1,h2,h3,.logo{font-family:Fredoka,Nunito,sans-serif;font-weight:600;line-height:1.15}
+a{color:inherit}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid #D987A6;outline-offset:4px}
+.skip-link{position:absolute;left:-9999px;top:8px;background:#fff;padding:.6rem 1rem;border-radius:12px;z-index:20}
+.skip-link:focus{left:8px}
+.top{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:.65rem 1.2rem;background:#fffd;backdrop-filter:blur(10px);border-bottom:1px solid #E3D7F7}
+.logo{font-size:1.5rem;text-decoration:none;color:#7653BE}
+#menu-btn{font:inherit;background:#E9DFFA;border:0;border-radius:99px;padding:.45rem 1rem;color:#33224F;cursor:pointer}
+#nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;padding:.5rem 1.2rem 1rem;flex-direction:column;box-shadow:0 12px 24px #6f4fbf22}
+#nav.open{display:flex}
+#nav a{padding:.6rem 0;text-decoration:none;font-weight:700}
+.hero{display:grid;gap:1.5rem;padding:2.5rem 1.2rem 0;background:radial-gradient(circle at 80% 30%,#FFE0D5aa,transparent 40%),radial-gradient(circle at 20% 70%,#E3D7F7,transparent 50%),#FBF8FF;overflow:hidden}
+.tag{display:inline-block;margin:0;padding:.2rem .9rem;border-radius:99px;background:#fff;border:1.5px dashed #CDB9F2;font-weight:700;font-size:.9rem}
+h1{font-size:clamp(2.4rem,9vw,4.4rem);margin:.6rem 0;color:#7653BE}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+.center .actions{justify-content:center}
+.btn{display:inline-block;padding:.7rem 1.4rem;border-radius:99px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 6px 14px #0002;transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.04)}
+.btn.ghost{background:#fff;color:#33224F;border:2px solid #CDB9F2;box-shadow:none}
+.hero-art{display:flex;justify-content:center;align-items:flex-end;height:min(70vw,420px)}
+.hero-art img{height:100%;width:auto;max-width:58%;object-fit:contain;filter:drop-shadow(0 10px 16px #4a1b2a33)}
+.hero-art .a{margin-right:-8%}
+.notice{margin:1.2rem auto 0;max-width:1100px;padding:1rem 1.2rem;border:1px solid #E7B7C5;border-left:5px solid #BD6685;border-radius:16px;background:#FFF5F8;color:#4A2430;font-size:.96rem}
+.notice a,.official-link a{font-weight:800;text-decoration-thickness:1px;text-underline-offset:3px}
+.sec{padding:3rem 1.2rem;background:var(--bg);color:var(--ink)}
+.sec h2{font-size:clamp(1.9rem,6vw,2.8rem);margin:0 0 .5rem}
+.center{text-align:center}
+.note{max-width:65ch;margin:0 0 1.5rem}
+.center .note{margin-inline:auto}
+.split{display:grid;gap:1.5rem}
+.side{margin:0;text-align:center}
+.side img{max-height:240px;width:auto;height:auto;max-width:100%;filter:drop-shadow(0 10px 14px #0003)}
+.grid{display:grid;gap:1rem}
+.card{background:#fff;border:2px solid var(--line);outline:2px dashed var(--soft);outline-offset:-9px;border-radius:var(--r);padding:1.3rem 1.4rem;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.card h3{margin:0 0 .3rem;font-size:1.25rem}
+.card p{margin:.3rem 0}
+.price{font:600 1.6rem Fredoka,sans-serif;color:var(--accent)}
+.price small{font:600 .8rem Nunito,sans-serif;color:var(--ink);display:block}
+.price small:first-child{display:inline;margin-right:.2rem}
+.card ul{padding-left:1.1rem;margin:.4rem 0 1rem;flex:1}
+.card li::marker{color:var(--hl)}
+.card .btn{align-self:flex-start;margin-top:auto}
+.card-note{font-size:.92rem;background:var(--soft);border-radius:12px;padding:.6rem .75rem}
+.steps{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.8rem;max-width:1000px;counter-reset:s}
+.steps li{counter-increment:s;background:#fff;border:2px solid #CDB9F2;border-radius:22px;padding:.8rem 1.2rem .8rem 4rem;position:relative;font-weight:700;min-height:3.4rem;display:flex;align-items:center}
+.steps li::before{content:counter(s);position:absolute;left:.5rem;top:50%;transform:translateY(-50%);width:2.6rem;height:2.6rem;border-radius:50%;background:#7653BE;color:#fff;display:grid;place-items:center;font:600 1.2rem Fredoka}
+.about{background:linear-gradient(160deg,#FFF3EE,#FBF8FF 45%,#F2ECFB)}
+.about .grid{margin-bottom:1.5rem}
+.facts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem;align-content:start}
+.facts li{background:#fff;border:2px dashed #CDB9F2;border-radius:99px;padding:.5rem 1rem;font-weight:700}
+.facts li:nth-child(odd){border-color:#EFB9AA}
+.facts li::before{content:"♡ ";color:#D987A6}
+#faq-list{max-width:820px}
+details{background:#fff;border:2px solid #E3D7F7;border-radius:var(--r);padding:.9rem 1.2rem;margin-bottom:.7rem;box-shadow:0 4px 12px #34204a08}
+summary{cursor:pointer;font-weight:800}
+details p{margin:.6rem 0 0}
+.official-link{margin-top:1rem}
+#contact{background:linear-gradient(135deg,#E3D7F7,#FFE0D5)}
+footer{padding:1.5rem 1.2rem;text-align:center;font-size:.9rem;background:#33224F;color:#fff}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.sec{padding:4rem 2rem}.notice{margin-top:1.5rem;padding:1.1rem 1.4rem}}
+@media(min-width:900px){.grid.three{grid-template-columns:repeat(3,1fr)}.about{padding-inline:max(2rem,calc((100% - 1200px)/2))}#menu-btn{display:none}#nav{display:flex!important;position:static;flex-direction:row;gap:1.4rem;padding:0;box-shadow:none;background:none}#nav a{padding:0}.hero{grid-template-columns:1fr 1fr;align-items:center;padding:3rem max(2rem,6vw) 0}.hero-art{height:min(68vh,560px)}.split{grid-template-columns:260px 1fr;align-items:start;padding-inline:max(2rem,calc((100% - 1200px)/2))}.split.rev{grid-template-columns:1fr 260px}.split.rev .side{order:2}.side{position:sticky;top:84px}.side img{max-height:75vh}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Zone themes: one palette per character. Add a class here, then use it as "theme" in js/data.js */
+.night{--bg:#EEF1FA;--ink:#1F2A4A;--accent:#34498F;--soft:#D8E0F5;--line:#AFBCE6;--hl:#C9962E}
+.candy{--bg:#FFF0F6;--ink:#4B2340;--accent:#B8306F;--soft:#FFD8E8;--line:#F5A9C8;--hl:#4DBBA5}
+.berry{--bg:#FBEFF4;--ink:#45182E;--accent:#9E2A63;--soft:#F6D3E1;--line:#E3A1BE;--hl:#E0507F}
+.skyfan{--bg:#F1F2FC;--ink:#26305A;--accent:#4A56B0;--soft:#DDE0F7;--line:#B9C0EC;--hl:#D9B04C}
+.teal{--bg:#EAF6F5;--ink:#12403F;--accent:#1F6F6B;--soft:#CDEAE7;--line:#9ACFCA;--hl:#D9A441}
+.sunny{--bg:#FFF8E1;--ink:#2B2416;--accent:#7A4F00;--soft:#FFE9A8;--line:#EBCB6E;--hl:#3A3A3A}
+.mint{--bg:#F0FAF3;--ink:#1F3D2E;--accent:#2E7D57;--soft:#D3F0DD;--line:#A7DCBB;--hl:#F28DB2}
+.cherry{--bg:#FFF0EE;--ink:#4A1C1C;--accent:#B42B2B;--soft:#FFD9D5;--line:#F0A9A3;--hl:#8B5E3C}
+.about{background:var(--bg)}
+.steps li{border-color:var(--line)}.steps li::before{background:var(--accent)}
+.facts li{border-color:var(--line)}.facts li:nth-child(odd){border-color:var(--hl)}
+#faq details{border-color:var(--line)}
+.hero-cta{font-weight:700;color:#6B49B5}
+.services-intro{background:#FBF8FF;color:#33224F;padding-bottom:1.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.chips a{padding:.4rem 1rem;border-radius:99px;background:#fff;border:2px dashed #CDB9F2;font-weight:700;text-decoration:none}.chips a:hover{background:#E9DFFA}
+.zone-cta{margin:1.2rem 0 0;font-weight:700}.zone-cta a{color:var(--accent)}
+.card.wide{grid-column:1/-1}
+.areas{width:100%;border-collapse:collapse;margin:.5rem 0}
+.areas th,.areas td{padding:.45rem .2rem;border-bottom:1px dashed var(--line);text-align:left;font-weight:600}
+.areas td{text-align:right;color:var(--accent);white-space:nowrap}
+.price.quote{font-size:1.3rem}
+.sr{position:absolute;left:-9999px}
+.fab{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));left:auto;z-index:50;width:auto;max-width:calc(100vw - 2rem);margin:0;box-shadow:0 8px 20px #33224F44}
+body{padding-bottom:4.5rem}
+@media(min-width:900px){.about .grid.three{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}}
+
+/* Soft edges + colored halo so each character blends into its zone */
+.side img,.hero-art img{
+ -webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 90%,transparent);
+ -webkit-mask-composite:source-in;
+ mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent),linear-gradient(180deg,transparent,#000 5%,#000 90%,transparent);
+ mask-composite:intersect;
+ filter:drop-shadow(0 0 12px var(--soft)) drop-shadow(0 8px 14px #0002)}
+.side{isolation:isolate}
+.side::before{content:"";position:absolute;inset:6% -12% 0;z-index:-1;background:radial-gradient(closest-side,var(--soft),transparent 78%)}
+.zone-note{margin-top:1rem}
+@media(max-width:899px){.side{position:relative}}
+
+/* Subtle background fill: dotted pattern, tiny sparkles and one sticker per section */
+.sec{position:relative}
+.zone,#how,#about,#terms,#faq{background-color:var(--bg);background-image:radial-gradient(color-mix(in srgb,var(--line) 55%,transparent) 1.4px,transparent 1.9px);background-size:28px 28px}
+.zone::after,#how::after,#about::after,#terms::after,#faq::after{content:"✦  ♡  ✦";position:absolute;right:1.2rem;bottom:.5rem;color:var(--hl);opacity:.5;letter-spacing:.6em;font-size:1.1rem;pointer-events:none}
+.services-intro{background-image:radial-gradient(#CDB9F288 1.4px,transparent 1.9px);background-size:28px 28px}
+#contact{background-image:radial-gradient(#ffffffaa 1.4px,transparent 1.9px),linear-gradient(135deg,#E3D7F7,#FFE0D5);background-size:28px 28px,auto}
+.zone-head{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.zone-head h2{margin:0 0 .5rem}
+.sticker{width:clamp(72px,11vw,112px);height:auto;flex:none;transform:rotate(6deg);filter:drop-shadow(0 4px 6px #0002)}
+.sticker.l{transform:rotate(-6deg)}
+
+/* Maintenance zone: duration pills, scattered stars/hearts/moon/clouds (like the reference sky), wavy heading */
+.dur{align-self:flex-start;background:var(--soft);color:var(--ink);border-radius:99px;padding:.1rem .75rem;font-weight:800;font-size:.85rem;margin-bottom:.45rem}
+.zone{overflow:hidden}
+.deco{position:absolute;inset:0;z-index:0;pointer-events:none}
+.deco span{position:absolute;line-height:1;opacity:.6;transform:rotate(var(--r,0deg))}
+.zone>.side,.zone>div:not(.deco){position:relative;z-index:1}
+@media(min-width:900px){.zone>.side{position:sticky}}
+#z-maintenance h2{text-decoration:underline wavy var(--hl) 2px;text-underline-offset:9px}
+@media(prefers-reduced-motion:no-preference){.deco span:nth-child(odd){animation:twinkle 4.5s ease-in-out infinite}.deco span:nth-child(3n){animation-delay:1.3s}@keyframes twinkle{50%{opacity:.25}}}
+
+/* Decoration for every section: sits behind content; overflow:clip keeps sticky characters working */
+.sec{isolation:isolate}
+.deco{z-index:-1}
+.zone,#services,#how,#about,#terms,#faq,#contact{overflow:clip}
+
+/* Request form */
+.request{max-width:680px;margin:2rem auto 0;text-align:left;background:#fff;color:#33224F;border:2px solid #CDB9F2;outline:2px dashed #E3D7F7;outline-offset:-9px;border-radius:22px;padding:1.5rem;box-shadow:0 8px 22px #34204a12}
+.request h3{margin:0 0 .3rem;font-size:1.4rem}
+.request .small{font-size:.92rem;margin:.2rem 0 .6rem}
+.request label{display:block;font-weight:700;margin:.9rem 0 .25rem}
+.request .opt{font-weight:600;opacity:.75}
+.request input,.request select,.request textarea{width:100%;font:inherit;padding:.65rem .85rem;border:2px solid #CDB9F2;border-radius:14px;background:#FBF8FF;color:#33224F}
+.request textarea{min-height:120px;resize:vertical}
+.request .check{display:flex;gap:.6rem;align-items:flex-start;font-weight:600;margin:1.1rem 0}
+.request .check input{width:auto;margin-top:.35rem}
+.request .check a{font-weight:800}
+.request .btn{border:0;font:inherit;font-weight:700;cursor:pointer}
+.request .btn[disabled]{opacity:.6;cursor:wait}
+.request .actions{justify-content:flex-start}
+.hp{position:absolute;left:-9999px}
+#form-status{margin:.8rem 0 0;font-weight:700;min-height:1.5em}
+
+/* Request form: grouped like a multi-part questionnaire */
+.fgroup{border:2px dashed #CDB9F2;border-radius:18px;padding:.4rem 1rem 1rem;margin:1rem 0;min-width:0}
+.fgroup legend{font:600 1.1rem Fredoka,Nunito,sans-serif;color:#6F4FBF;padding:0 .5rem}
+.request .label{font-weight:700;margin:.9rem 0 .35rem}
+.choices{display:flex;gap:.6rem;flex-wrap:wrap}
+.request label.choice{display:flex;align-items:center;gap:.5rem;margin:0;padding:.55rem .95rem;border:2px solid #CDB9F2;border-radius:99px;background:#FBF8FF;font-weight:700;cursor:pointer}
+.request .choice input{width:auto;margin:0}
+.request .choice:has(input:checked){background:#E9DFFA;border-color:#6F4FBF}
+
+/* ===== Game switcher (ZZZ / Genshin) ===== */
+body[data-game="zzz"] [data-game-only="genshin"],body[data-game="genshin"] [data-game-only="zzz"]{display:none!important}
+html{scroll-padding-top:calc(var(--hdr,52px) + 64px)}
+.gamebar{position:sticky;top:var(--hdr,52px);z-index:4;display:flex;justify-content:center;gap:.5rem;padding:.45rem 1rem;background:#fffe;backdrop-filter:blur(10px);border-bottom:1px solid #E3D7F7}
+.gamebar button{flex:1 1 0;max-width:240px;min-height:44px;font:700 .95rem Nunito,system-ui,sans-serif;color:#33224F;background:#fff;border:2px solid #CDB9F2;border-radius:99px;padding:.4rem .6rem;cursor:pointer;transition:transform .15s,background .15s}
+.gamebar button:hover{transform:translateY(-1px)}
+.gamebar button[aria-pressed="true"]{background:#7653BE;border-color:#7653BE;color:#fff}
+@media(max-width:400px){.gamebar{padding-inline:.5rem}.gamebar button{font-size:.88rem;padding-inline:.3rem}}
+
+/* ===== Genshin element themes (Teyvat) ===== */
+.electro{--bg:#F3EEFB;--ink:#2E1F57;--accent:#6B3FB5;--soft:#E2D6F6;--line:#BFA8EA;--hl:#C79B3B}
+.cryo{--bg:#EDF6FB;--ink:#17304A;--accent:#2B6C9B;--soft:#D3E8F6;--line:#A3CBE6;--hl:#5BB5D6}
+.hydro{--bg:#EDF3FD;--ink:#14305C;--accent:#2F5DB8;--soft:#D6E3FA;--line:#A9C2EE;--hl:#4BB6D8}
+.pyro{--bg:#FFF1EC;--ink:#4D1F1A;--accent:#B8402F;--soft:#FFDCD2;--line:#F0B1A2;--hl:#E0803A}
+.anemo{--bg:#ECF8F4;--ink:#123F3A;--accent:#1C7B6D;--soft:#CDEFE6;--line:#97D3C4;--hl:#43B79C}
+
+/* Genshin sections: keep decorative glyphs from causing sideways scroll on narrow screens */
+#g-services,#gpromos,#g-how,#g-about,#g-terms,#g-faq,#g-zones>.sec,#promos{overflow-x:clip}
+
+/* ===== Genshin catalog (V13 final) ===== */
+#g-account-risks,#g-request,#g-contact,#gz-explore,[id^="gz-"],[id^="gc-"]{scroll-margin-top:calc(var(--hdr,52px) + 64px)}
+.chip{display:inline-block;font:800 .78rem Nunito,sans-serif;padding:.15rem .7rem;border-radius:99px;background:var(--soft);color:var(--ink);border:1.5px solid var(--line);white-space:nowrap}
+.chip.soon{border-style:dashed}
+.cat-head{display:flex;gap:.6rem;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.cat-head h3{margin:0;flex:1 1 12rem}
+.cat.compact{padding-bottom:1rem}
+.mini{font-weight:800;margin:.7rem 0 .1rem;font-size:.92rem}
+.modes{display:grid;gap:.8rem;margin:.8rem 0}
+.modes .mode{background:var(--soft);border-radius:14px;padding:.8rem 1rem}
+.modes h4{margin:.1rem 0 .3rem;font:600 1.1rem Fredoka,sans-serif}
+@media(min-width:700px){.modes{grid-template-columns:1fr 1fr}.modes.four{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.modes.four{grid-template-columns:repeat(4,1fr)}}
+.areas.regions th[scope=col]{font-size:.85rem;color:var(--accent)}
+.areas.regions td,.areas.offers td{white-space:normal;font-size:.9rem}
+.areas.offers th small{font-weight:600;opacity:.8}
+.offer-det details{margin:.3rem 0}
+.offer-det summary{cursor:pointer;font-weight:700;padding:.3rem 0;min-height:32px}
+#g-zone-chips a{min-height:40px;display:inline-flex;align-items:center}
+.card.risk{border:2px solid #BD6685;background:#FFF9FB;margin-bottom:1.2rem}
+.card.risk h3{color:#7a2c48}
+.risk-summary{margin:1.1rem 0;padding:1rem 1.1rem;border:2px solid #BD6685;border-left-width:6px;border-radius:16px;background:#FFF5F8;color:#4A2430;font-size:1rem;line-height:1.55}
+.risk-summary h4{margin:0 0 .3rem;font:600 1.15rem Fredoka,sans-serif}
+.risk-summary a{font-weight:800}
+.notice.closed{margin:.8rem 0;max-width:none}
+.ferr{color:#9b1c3f;font-weight:700;font-size:.92rem;margin:.3rem 0 0}
+.fld.bad input,.fld.bad select,.fld.bad textarea,input[name=consent][aria-invalid=true]{border-color:#c02a52;outline:2px solid #c02a5222}
+#g-request .form-status{margin:.8rem 0 0;font-weight:700;min-height:1.5em}
+#g-request .btn[disabled]{opacity:.6;cursor:not-allowed}
+.zone .grid .card.wide{grid-column:1/-1}
+@media(max-width:480px){.areas th,.areas td{font-size:.88rem}}
+
+/* ===== V14 PART 2: promotions, holiday campaigns, About (Genshin), forms ===== */
+#promos,#g-about,#gpromos,#g-contact,#contact,#request{scroll-margin-top:calc(var(--hdr,52px) + 64px)}
+#promos,#g-about,#gpromos{overflow:clip}
+#promos,#gpromos{background-image:radial-gradient(color-mix(in srgb,var(--line) 55%,transparent) 1.4px,transparent 1.9px);background-size:28px 28px}
+#g-about{background-color:var(--bg);background-image:radial-gradient(color-mix(in srgb,var(--line) 55%,transparent) 1.4px,transparent 1.9px);background-size:28px 28px}
+#g-about .facts{margin-top:1.2rem}
+.promos-sec .promo-h{font-size:1.5rem;margin:1.8rem 0 .2rem}
+.promos-sec .promo-h:first-child{margin-top:.5rem}
+.promo-grid{margin-top:.8rem;align-items:stretch}
+.promo{padding-top:1.3rem}
+.promo ul{flex:none}
+.promo-top{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:.5rem;padding-right:2.6rem}
+.chip.status.active{background:#E0F5EA;border-color:#8FD1AE;color:#17543A}
+.chip.status.upcoming{background:#E4ECFF;border-color:#A9C0F2;color:#1F3F8A}
+.promo-dates{font-size:.95rem;margin:.4rem 0}
+.promo-dates small{opacity:.8}
+.promo-table{width:100%;border-collapse:collapse;margin:.5rem 0;font-size:.93rem}
+.promo-table th,.promo-table td{padding:.4rem .3rem;border-bottom:1px dashed var(--line);text-align:left;vertical-align:top}
+.promo-table thead th{font-size:.8rem;color:var(--accent);font-weight:800}
+.promo-table td{text-align:right;white-space:nowrap}
+.promo-table s{opacity:.65}
+.promo-table td strong{color:var(--accent);font:600 1.05rem Fredoka,sans-serif}
+.promo-table .sum th,.promo-table .sum td{border-top:2px solid var(--line)}
+.promo-save{font-weight:700;margin:.2rem 0 .4rem;color:var(--accent)}
+.promo .btn{margin-top:1rem}
+/* Holiday campaigns: pastel blue / lavender / violet, snow and sparkles */
+.promo.camp{position:relative;overflow:hidden;border-width:2px;background:linear-gradient(180deg,var(--camp-a) 0,#fff 9rem)}
+.promo.camp::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--camp-b),var(--camp-c),var(--camp-b))}
+.promo-glyph{position:absolute;top:.7rem;right:1rem;font-size:1.6rem;line-height:1;color:var(--camp-b);opacity:.9}
+.camp-christmas-2026{--camp-a:#DDEEFB;--camp-b:#5B9BD5;--camp-c:#A9D3F2;border-color:#A9D3F2}
+.camp-end-of-year-2026{--camp-a:#E9DFFA;--camp-b:#7653BE;--camp-c:#B9A2EA;border-color:#B9A2EA}
+.camp-new-year-2027{--camp-a:#E6E9FF;--camp-b:#5E6FD8;--camp-c:#C4B5F0;border-color:#C4B5F0}
+.camp-christmas-2026 .promo-glyph{animation:none}
+@media(prefers-reduced-motion:no-preference){.promo-glyph{animation:twinkle 4.5s ease-in-out infinite}}
+/* Request form (ZZZ shares the Genshin form look) */
+.request .fld{margin:0}
+.request .form-status{margin:.8rem 0 0;font-weight:700;min-height:1.5em}
+.request .btn[disabled]{opacity:.6;cursor:not-allowed}
+.request .notice.closed{margin:.8rem 0}
+@media(max-width:699px){.promo-table{font-size:.88rem}.promo-table td{white-space:normal}.promo-top{padding-right:2.2rem}.request{padding:1.1rem}}
+@media(max-width:899px){.top{gap:.45rem}#menu-btn{order:3;margin-left:auto}#nav{top:100%}}
