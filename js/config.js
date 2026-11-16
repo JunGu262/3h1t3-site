@@ -1,7 +1,7 @@
 /* EDIT HERE: public contact information and global settings. Everything in this file is visible to anyone who opens the site. */
 window.SITE = {
   brand: "3h1t3",
-  twitterHandle: "", // X/Twitter handle, without @
+  twitterHandle: "3h1t3", // X/Twitter handle, without @
   currency: "USD",
   zzzOrdersOpen: true, // Zenless Zone Zero requests. true = form enabled. Set false to close it.
   genshinOrdersOpen: true, // Genshin Impact requests. true = form enabled. Set false to close it.
